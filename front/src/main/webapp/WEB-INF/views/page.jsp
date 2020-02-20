@@ -19,10 +19,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+  <title>Online Shopping-${title}</title>
+ 
 
   <!-- Bootstrap core CSS -->
   <link href="${ css}/bootstrap.min.css" rel="stylesheet">
+  
 
   <!-- Custom styles for this template -->
   <link href="${css}/myapp.css" rel="stylesheet">
@@ -34,14 +36,23 @@
   <!-- Navigation -->
 <%@ include file="./shared/navbar.jsp" %>
   <!-- Page Content -->
-  <%@ include file="./shared/home.jsp" %>
-  <!-- /.container -->
-
-  <!-- Footer -->
-<%@ include file="./shared/foot.jsp" %>>
+  <div class="content">
+  <c:if test="${userClickHome==true}">
+  <%@ include file="home.jsp"%>
+  </c:if>
+  <c:if test="${userClickAbout==true}">
+  <%@ include file="about.jsp" %>
+  </c:if>
+  <c:if test="${userClickContact==true}">
+  <%@ include file="contact.jsp" %>
+  </c:if>
+</div>
+ 
   <!-- Bootstrap core JavaScript -->
   <script src="${js} /jquery.min.js"></script>
   <script src="${js} /js/bootstrap.bundle.min.js"></script>
+  
+  
 
 </body>
 
